@@ -7,6 +7,10 @@ import {
 } from "react-router-dom";
 
 import './App.css';
+import { DesktopMenu } from './components/desktopMenu';
+import Gallery from './components/gallery';
+import About from './components/about';
+import DrawingPanel from './components/drawingPanel';
 
 export class App extends Component {
   constructor(props) {
@@ -22,12 +26,30 @@ export class App extends Component {
           {!this.state.mobile
            ?<Route path="/" element={
               <div id="desktop-wrapper">
+                <DesktopMenu />
                 {/* This is where the current route in rendered */}
-                <Outlet />
+                <div className="ContentWindow">
+                  <Outlet />
+                  <DrawingPanel />
+                </div>                
               </div>
             }>
-              <Route path="interactive" element={<div id="interactive" />} />
-              <Route path="video" element={<div id="video" />} />
+
+              <Route path="interactive" element={
+                <Gallery
+                  mobile={this.state.mobile}
+                />} />
+
+              <Route path="video" element={
+                <Gallery
+                  mobile={this.state.mobile}
+                />} />
+
+              <Route path="about" element={
+                <About
+                  mobile={this.state.mobile}
+                />} />
+
             </Route>
            :<Route path="/" element={
               <div id="mobile-wrapper">
