@@ -33,7 +33,7 @@ function GalleryListings(props){
   const listEntries = props.list.map((project) =>
     <Link to={project.id} key={project.id} className="GalleryLink">
       <div className='GalleryListing PinkBorder' id={project.id}>
-        <img className='ListImg Lazy' src={project.listhold} data-src={project.listgif} alt={project.listgifalt} />
+        <img className='ListImg' src={project.listgif} alt={project.listgifalt} />
         <span className='ListTitle'> {project.title} </span>
       </div>
     </Link>

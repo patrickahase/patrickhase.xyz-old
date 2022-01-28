@@ -18,8 +18,8 @@ export class App extends Component {
     super(props);
     this.state = { 
       mobile: window.matchMedia('all and (any-hover: none)').matches,
-      interactiveList:  projectsList.filter(project => project.type === "w-i"),
-      videoList:  projectsList.filter(project => project.type === "m-l"),
+      interactiveList:  projectsList.filter(project => project.type === "i"),
+      videoList:  projectsList.filter(project => project.type === "v"),
     };
   }
   render() {
