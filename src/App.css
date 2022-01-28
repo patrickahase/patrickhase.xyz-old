@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+/*z-index layers*/
+/*0 - Static BG Elements*/
+/*1 - Interactive BG Elements*/
+/*2 - Content*/
+/*3 - UI*/
+
+* {
+  box-sizing: border-box;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*General Font*/
+@font-face {
+	font-family: 'Recursive';
+	src: url('./assets/fonts/Recursive_VF_1.077--subset-GF_latin_basic.woff2') format('woff2 supports variations'),
+       url('./assets/fonts/Recursive_VF_1.077--subset-GF_latin_basic.woff2') format('woff2-variations');
+       font-weight: 300 1000;
+       font-variation-settings: 'MONO' var(--mono), 'CASL' var(--casl), 'wght' var(--wght) 300 700, 'SLNT' var(--slnt), 'CRSV' var(--CRSV);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root{
+  --mono: 0;
+  --casl: 0;
+  --wght: 700;
+  --slnt: 0;
+  --csrv: 0;
+  --red: rgb(189,49,55);
+  --blue: rgb(54,84,182);
+  --pink: rgb(232,134,202);
+  --d-pink: rgb(157,88,136);
+  --bdr-l: rgb(75, 75, 105);
+  --bdr-d: rgb(15, 15, 21);
+  --t-bdr-d: rgba(15, 15, 21, 0.9);
+  --res-unit: min(1vw, 2vh);
+  --res-munit: max(1vw, 2vh);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-link {
-  color: #61dafb;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#desktop-wrapper{
+  width: 100vw;
+  height: 100vh;
+  padding: calc(var(--res-unit)*2);
+  position: absolute;
+  background-image: url('./assets/bg-images/p-hase-desktop-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
 }
