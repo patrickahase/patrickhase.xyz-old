@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as BrowserRouter, Routes, Route } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet
+} from "react-router-dom";
 
 import './App.css';
-import DesktopMenu from './components/desktopMenu';
-import Gallery from './components/gallery';
 
 export class App extends Component {
   constructor(props) {
@@ -12,37 +14,65 @@ export class App extends Component {
     this.state = { 
       mobile: window.matchMedia('all and (any-hover: none)').matches,
     };
-    this.history = createBrowserHistory({forceRefresh:true});
   }
   render() {
     return (
-      <BrowserRouter history={this.history}>
+      <BrowserRouter>
+        <Routes>
+          {!this.state.mobile
+           ?<Route path="/" element={
+              <div id="desktop-wrapper">
+                {/* This is where the current route in rendered */}
+                <Outlet />
+              </div>
+            }>
+              <Route path="interactive" element={<div id="interactive" />} />
+              <Route path="video" element={<div id="video" />} />
+            </Route>
+           :<Route path="/" element={
+              <div id="mobile-wrapper">
+                {/* This is where the current route in rendered */}
+                <Outlet />
+              </div>
+            }>
+              {/* Mobile Routes here */}
+              {/* <Route path="interactive" element={<div id="interactive" />} />
+              <Route path="video" element={<div id="video" />} /> */}
+            </Route>
+          }
+            
+        </Routes>
+        <Outlet />
+      </BrowserRouter>      
+    );
+  }
+  componentDidMount() {
+  }
+}
+
+export default App;
+
+{/* <BrowserRouter history={this.history}>
         <Routes>
           {!this.state.mobile
             ? <div id="desktop-wrapper">
 
-                {/* Navigation Menu */}
                 <DesktopMenu />
 
-                {/* Interactive Gallery */}
                 <Route path="/interactive" element={
                   <Gallery
                     mobile={this.state.mobile} />
                 } />
 
-                {/* Video Gallery */}
                 <Route path="/video" element={
                   <Gallery
                     mobile={this.state.mobile} />
                 } />
 
-                {/* About */}
                 <Route path="/about" element={
                   <Gallery
                     mobile={this.state.mobile} />
                 } />
-
-                {/* Drawing Goes Here */}
 
               </div>
             : <div id="mobile-wrapper">
@@ -50,12 +80,4 @@ export class App extends Component {
               </div>
           }
         </Routes>
-      </BrowserRouter>
-    );
-  }
-  componentDidMount() {
-    console.log("i'm here")
-  }
-}
-
-export default App;
+</BrowserRouter> */}
