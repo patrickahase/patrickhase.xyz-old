@@ -14,17 +14,17 @@ export const DesktopMenu = () => {
       </Link>
       {/* Menu Links */}
       <div id="desktop-menu-link-wrapper" className="PinkBorder">
-        <Link to="/interactive" className="MenuLink">
+        <Link to="/interactive">
           <button className="ButtonStyle DesktopMenuButton">
             <u>i</u>nteractive
           </button>
         </Link>
-        <Link to="/video" className="MenuLink">
+        <Link to="/video">
           <button className="ButtonStyle DesktopMenuButton">
             <u>v</u>ideo
           </button>
         </Link>
-        <Link to="/about" className="MenuLink">
+        <Link to="/about">
           <button className="ButtonStyle DesktopMenuButton">
             <u>a</u>bout
           </button>

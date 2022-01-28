@@ -11,12 +11,15 @@ import { DesktopMenu } from './components/desktopMenu';
 import Gallery from './components/gallery';
 import About from './components/about';
 import DrawingPanel from './components/drawingPanel';
+import { projectsList } from './assets/projectsList';
 
 export class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       mobile: window.matchMedia('all and (any-hover: none)').matches,
+      interactiveList:  projectsList.filter(project => project.type === "w-i"),
+      videoList:  projectsList.filter(project => project.type === "m-l"),
     };
   }
   render() {
@@ -35,14 +38,18 @@ export class App extends Component {
               </div>
             }>
 
-              <Route path="interactive" element={
+              <Route path="interactive/*" element={
                 <Gallery
                   mobile={this.state.mobile}
+                  title={"interactive"}
+                  list={this.state.interactiveList}
                 />} />
 
-              <Route path="video" element={
+              <Route path="video/*" element={
                 <Gallery
                   mobile={this.state.mobile}
+                  title={"video"}
+                  list={this.state.videoList}
                 />} />
 
               <Route path="about" element={

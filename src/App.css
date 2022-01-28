@@ -123,14 +123,89 @@ code {
       filter: invert();
     }
 
-#drawing-panel{
-  width: 100%;
-  height: 100%;
-}
-
 .ContentWindow{
   width: calc(100% - calc(var(--res-unit)*4));
   height: 78%;
   position: absolute;
   bottom: calc(var(--res-unit)*2);
 }
+  .ContentWrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--t-bdr-d); 
+  }
+    .ContentTitle{
+      font-family: 'Recursive';
+      margin: 0;
+      color: aliceblue;
+      font-weight: 600;
+      font-size: calc(var(--res-unit)*2.5);
+      font-variation-settings: 'MONO' 1;
+      text-align: center;
+      border-left: 4px solid rgb(256, 164, 232);
+      border-top: 4px solid rgb(256, 164, 232);
+      border-right: 4px solid rgb(127,58,106);
+      border-bottom: 4px solid rgb(127,58,106);
+    }
+    .ListingWrapper{
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+    }
+      .GalleryListing{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        height: calc(var(--res-unit)*15);
+        font-size: calc(var(--res-unit)*2);
+        transition: font-variation-settings 1s;
+        justify-content: center;
+        font-variation-settings: 'MONO' 0;
+        border-top: none;
+      }
+      .GalleryListing:active {
+        background-color: var(--t-bdr-d);
+        filter: invert();
+      }
+      .GalleryListing:hover{
+        font-variation-settings: 'MONO' 0.5;
+      }
+      .GalleryLink:nth-child(even) > .GalleryListing{
+        flex-direction: row-reverse;
+      }
+        .ListImg{
+          border-radius: 30%;
+          padding: 0.5vw;
+          height: 100%;
+          transition: 1s;
+        }
+        .GalleryListing:hover > .ListImg{
+          border-radius: 0%;
+        }
+        .ListTitle{
+          font-family: 'Recursive';
+          margin: 0;
+          color: aliceblue;
+          pointer-events: none;
+          transform-origin: center left;
+          transform: scale(1);
+          transition: transform 1s;
+        }
+        .GalleryLink:nth-child(even) > .GalleryListing .ListTitle{
+          transform-origin: center right;
+        }
+        .GalleryListing:hover > .ListTitle{
+          transform: scale(1.2);
+        }
+  #drawing-panel{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0%;
+    z-index: 1;
+  }
