@@ -8,10 +8,13 @@ import {
 
 import './App.css';
 import { DesktopMenu } from './components/desktopMenu';
-import Gallery from './components/gallery';
-import About from './components/about';
+import { MobileMenu } from './components/mobileMenu';
+import { Gallery } from './components/gallery';
+import { About } from './components/about';
+import { SVGDefs } from './components/svgDefs';
 import DrawingPanel from './components/drawingPanel';
 import { projectsList } from './assets/projectsList';
+import AOCModal from './components/aocModal';
 
 export class App extends Component {
   constructor(props) {
@@ -20,6 +23,8 @@ export class App extends Component {
       mobile: window.matchMedia('all and (any-hover: none)').matches,
       interactiveList:  projectsList.filter(project => project.type === "i"),
       videoList:  projectsList.filter(project => project.type === "v"),
+
+      modalIsOpen: true
     };
   }
   render() {
@@ -29,11 +34,15 @@ export class App extends Component {
           {!this.state.mobile
            ?<Route path="/" element={
               <div id="desktop-wrapper">
+                {this.state.modalIsOpen &&
+                  <AOCModal
+                    closeModal={this.closeModal.bind(this)} />
+                }
                 <DesktopMenu />
-                {/* This is where the current route in rendered */}
                 <div className="ContentWindow">
                   <Outlet />
                   <DrawingPanel />
+                  <SVGDefs />
                 </div>                
               </div>
             }>
@@ -46,8 +55,7 @@ export class App extends Component {
                 />} />
 
               <Route path="video/*" element={
-                <Gallery
-                  mobile={this.state.mobile}
+                <Gallery mobile={this.state.mobile}
                   title={"video"}
                   list={this.state.videoList}
                 />} />
@@ -60,11 +68,30 @@ export class App extends Component {
             </Route>
            :<Route path="/" element={
               <div id="mobile-wrapper">
+                {this.state.modalIsOpen &&
+                  <AOCModal
+                    closeModal={this.closeModal.bind(this)} />
+                }
+                <MobileMenu 
+                  resetMobileMenuActive={this.resetMobileMenuActive.bind(this)} />
                 {/* This is where the current route in rendered */}
                 <Outlet />
               </div>
+              
             }>
+              
               {/* Mobile Routes here */}
+              <Route path="projects/*" element={
+                  <Gallery
+                    mobile={this.state.mobile}
+                    title={"interactive"}
+                    list={projectsList}
+                  />} />
+
+                <Route path="about" element={
+                  <About
+                    mobile={this.state.mobile}
+                  />} />
               {/* <Route path="interactive" element={<div id="interactive" />} />
               <Route path="video" element={<div id="video" />} /> */}
             </Route>
@@ -76,37 +103,49 @@ export class App extends Component {
     );
   }
   componentDidMount() {
+    if (this.state.mobile){
+      //MOBILE
+      /* console.log(window.location.href) */
+    } else {
+      //DESKTOP
+      window.addEventListener("keydown", (e) => this.onKeyDown(e));
+    }
+  }
+  onKeyDown(e) {
+    switch(e.keyCode){
+      case 73: // i
+      this.selectLink('interactive-button');
+      break;
+      case 86: // v
+      this.selectLink('video-button');
+      break;
+      case 65: // a
+      this.selectLink('about-button');
+      break;
+      case 72: // h
+      this.selectLink('desktop-menu-title-wrapper');
+      break;
+      default:
+    }
+  }
+  selectLink(button){
+    let clicked = document.getElementById(button);
+    clicked.classList.add('ActiveButton');
+    window.addEventListener("keyup", () => this.unSelectLink(clicked));
+  }
+  unSelectLink(clicked){
+    clicked.parentElement.click();
+    clicked.classList.remove('ActiveButton');
+    window.removeEventListener("keyup", () => this.unSelectLink(clicked));
+  }
+  resetMobileMenuActive(){
+    Array.from(document.getElementsByClassName('ActiveButton')).forEach(element => {
+      element.classList.remove('ActiveButton');
+    });
+  }
+  closeModal(){
+    this.setState({ modalIsOpen: false })
   }
 }
 
 export default App;
-
-{/* <BrowserRouter history={this.history}>
-        <Routes>
-          {!this.state.mobile
-            ? <div id="desktop-wrapper">
-
-                <DesktopMenu />
-
-                <Route path="/interactive" element={
-                  <Gallery
-                    mobile={this.state.mobile} />
-                } />
-
-                <Route path="/video" element={
-                  <Gallery
-                    mobile={this.state.mobile} />
-                } />
-
-                <Route path="/about" element={
-                  <Gallery
-                    mobile={this.state.mobile} />
-                } />
-
-              </div>
-            : <div id="mobile-wrapper">
-
-              </div>
-          }
-        </Routes>
-</BrowserRouter> */}

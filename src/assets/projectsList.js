@@ -84,8 +84,7 @@ export const projectsList = [
                    <img className='HeroImg' href="https://disclaimer.org.au/contents/a-hanley" src={require("../assets/list-gifs/sunkland-xyz-gif.gif")} alt="Gif of SUNKLAND.XYZ website" />
                  </a>,
     "extlink": "https://disclaimer.org.au/contents/a-hanley",    
-    "context": <>Created with Amias Hanley for Disclaimer Journal published by Liquid 
-      Architecture</>,
+    "context": <>Created with Amias Hanley for Liquid Architecture's Disclaimer Journal</>,
     "bodytext": <> SUNKLAND.XYZ is an interactive browser-based presentation of a sound 
       work originally composed for 24.2 channels by Amias Hanley and first exhibited at 
       Liquid Architecture’s Unheard Relations, as part of McClelland Sculpture Park and 

@@ -1,15 +1,17 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 
+import { DitheredGradientBox } from './ditheredGradient';
 import { projectsList } from '../assets/projectsList';
 
 export const ProjectEntry = () => {
   let params = useParams();
   let project = projectsList.find(x => x.id === params.entry);
   return (
-    <div className="ContentWrapper">
-      <div className="ContentTitle">
+    <div className="ContentWrapper PinkBorder">
+      <div className="ContentTitle ButtonStyle">
         {project.title}
+        <DitheredGradientBox />
       </div>
       <div className="ListingWrapper ProjectListingWrapper">
         <span className="ProjectListingText ProjectListingHeading B I"> {project.role} </span>

@@ -25,13 +25,27 @@
   --wght: 700;
   --slnt: 0;
   --csrv: 0;
-  --red: rgb(189,49,55);
+  /* https://lospec.com/palette-list/hydrangea-11 */
+  --col-1: #413652;
+  --col-2: #6f577e;
+  --col-3: #986f9c;
+  --col-4: #c090a7;
+  --col-5: #d4beb8;
+  --col-6: #eae4dd;
+  --col-7: #c9d4b8;
+  --col-8: #90c0a0;
+  --col-9: #6f919c;
+  --col-10: #62778c;
+  --col-11: #575f7e;
+  --bdr-d: rgb(15, 15, 21);
+  --t-bdr-d: rgba(15, 15, 21, 0.9);
+  /* --red: rgb(189,49,55);
   --blue: rgb(54,84,182);
   --pink: rgb(232,134,202);
   --d-pink: rgb(157,88,136);
   --bdr-l: rgb(75, 75, 105);
   --bdr-d: rgb(15, 15, 21);
-  --t-bdr-d: rgba(15, 15, 21, 0.9);
+  --t-bdr-d: rgba(15, 15, 21, 0.9); */
   --res-unit: min(1vw, 2vh);
   --res-munit: max(1vw, 2vh);
 }
@@ -43,6 +57,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-color: var(--col-6) var(--col-1);
+}
+*::-webkit-scrollbar {
+  width: 17px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--col-1);
+  margin: 17px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--col-6);
+  /* border: solid var(--col-1);
+  border-width: 16px 0; */
+  
 }
 
 code {
@@ -52,17 +81,17 @@ code {
 
 .ButtonStyle{
   background-color: rgb(45, 45, 63);
-  border-left: 4px solid var(--bdr-l);
-  border-top: 4px solid var(--bdr-l);
-  border-right: 4px solid var(--bdr-d);
-  border-bottom: 4px solid var(--bdr-d);
+  border-left: 4px solid var(--col-2);
+  border-top: 4px solid var(--col-2);
+  border-right: 4px solid var(--col-1);
+  border-bottom: 4px solid var(--col-1);
 }
 
 .PinkBorder{
-  border-left: 1px solid var(--d-pink);
-  border-top: 1px solid var(--d-pink);
-  border-right: 1px solid var(--pink);
-  border-bottom: 1px solid var(--pink);
+  border-left: 1px solid var(--col-4);
+  border-top: 1px solid var(--col-4);
+  border-right: 1px solid var(--col-3);
+  border-bottom: 1px solid var(--col-3);
 }
 
 .I{
@@ -72,15 +101,52 @@ code {
   font-weight: 400;
 }
 
+.DitheredGradientBox{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  width: 100%;
+}
+.DitheredGradient{
+  width: 100%;
+}
+
 #desktop-wrapper{
   width: 100vw;
   height: 100vh;
   padding: calc(var(--res-unit)*2);
   position: relative;
-  background-image: url('./assets/structural-images/p-hase-desktop-bg.png');
+  /* background-image: url('./assets/structural-images/p-hase-desktop-bg.png'); */
+  background-color: var(--bdr-d);
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 }
+
+#modal-overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-color: var(--t-bdr-d);
+  z-index: 4;
+}
+  #modal-content-wrapper{
+    width: calc(100% - calc(var(--res-unit)*4));
+    height: 78%;
+    position: absolute;
+    left: calc(var(--res-unit)*2);
+    bottom: calc(var(--res-unit)*2);
+    background-color: var(--bdr-d);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: auto;
+    padding: var(--res-munit);
+  }
 
 #desktop-menu-wrapper{
   width: 100%;
@@ -105,7 +171,7 @@ code {
       font-family: 'Recursive';
       margin: 0;
       padding: calc(var(--res-unit)*0.2) 0;
-      color: aliceblue;
+      color: var(--col-6);
       font-weight: 400;
       font-size: calc(var(--res-unit)*2);
       font-variation-settings: 'MONO' 0;
@@ -122,12 +188,18 @@ code {
     .DesktopMenuButton{
       height: 100%;
       font-size: calc(var(--res-unit)*2);
-      color: aliceblue;
+      color: var(--col-6);
       padding: 0 var(--res-unit);
       text-decoration: none;
     }
-    .DesktopMenuButton:active {
+    .DesktopMenuButton:active{
       filter: invert();
+    }
+    .ActiveButton {
+      filter: invert();
+    }
+    .AOCButton{
+      height:fit-content;
     }
 
 .ContentWindow{
@@ -149,15 +221,13 @@ code {
     .ContentTitle{
       font-family: 'Recursive';
       margin: 0;
-      color: aliceblue;
+      color: var(--col-6);
       font-weight: 600;
       font-size: calc(var(--res-unit)*2.5);
       font-variation-settings: 'MONO' 1;
       text-align: center;
-      border-left: 4px solid rgb(256, 164, 232);
-      border-top: 4px solid rgb(256, 164, 232);
-      border-right: 4px solid rgb(127,58,106);
-      border-bottom: 4px solid rgb(127,58,106);
+      height: fit-content;
+      background-color: transparent;
     }
     .ListingWrapper{
       display: flex;
@@ -173,7 +243,8 @@ code {
         transition: font-variation-settings 1s;
         justify-content: center;
         font-variation-settings: 'MONO' 0;
-        border-top: none;
+        border-width: 0;
+        border-bottom-width: 1px;
       }
       .GalleryListing:active {
         background-color: var(--t-bdr-d);
@@ -197,7 +268,7 @@ code {
         .ListTitle{
           font-family: 'Recursive';
           margin: 0;
-          color: aliceblue;
+          color: var(--col-6);
           pointer-events: none;
           transform-origin: center left;
           transform: scale(1);
@@ -214,22 +285,25 @@ code {
       }
       .ProjectListingText{
         width: 80%;
-        color: aliceblue;
+        color: var(--col-6);
         font-size: calc(var(--res-unit)*1.5);
         font-variation-settings: 'MONO' 0;
         text-align: center;
         padding: 1vh 0;
         flex-grow: 1;
       }
+      .AOCText{
+        flex-grow: 0;
+      }
       .ProjectListingHeading{
         font-size: calc(var(--res-unit)*2);
       }
       .ProjectListingLink{
         width: auto;
-        background-color: rgb(211, 211, 193);
+        background-color: var(--col-6);
         padding: 0 2vh;
         margin: var(--res-unit) 0;
-        color: #551A8B;
+        color: var(--col-1);
       }
       .ProjectListingBody{
         font-weight: 300;
@@ -255,8 +329,17 @@ code {
         color: inherit;
       }
       .SelectLink:hover{
-        color: #5252ff;
+        color: var(--col-8);
         cursor: pointer;
+      }
+      .AboutText{
+        flex-direction: row;
+      }
+      #pressed-pic{
+        border-radius: 30%;
+        padding: 0.5vw;
+        float: left;
+        height: 100%;
       }
   #drawing-panel{
     width: 100%;
@@ -265,3 +348,123 @@ code {
     bottom: 0%;
     z-index: 1;
   }
+
+
+/*Mobile Style*/
+@media all and (any-hover: none) {
+  #mobile-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bdr-d);
+  }
+
+  #mobile-menu-wrapper{
+    width: 100%;
+    height: 20%;
+  }
+    #mobile-menu-title-wrapper{
+      width: 100%;
+      height: 50%;     
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+      .TitleGif{
+        height: 100%;
+       }
+      .TitleGif:active{
+        filter: invert();
+       }
+       #menu-title{
+        font-size: calc(var(--res-munit)*2);
+       }
+      #mobile-menu-link-wrapper{
+        width: 100%;
+        height: 50%;
+        background-color: var(--t-bdr-d);
+        display:flex;
+        justify-content: space-between;
+      }
+      .MobileLink{
+        flex-grow: 1;
+      }
+      .MobileMenuButton{
+        height: 100%;
+        width: 100%;
+        color: var(--col-6);
+        font-weight: 400;
+        font-size: calc(var(--res-munit)*2);
+        font-variation-settings: 'MONO' 0;
+        padding: 0 var(--res-unit);
+        text-decoration: none;
+      }
+      .ContentWrapper{
+        height: 80%;
+      }
+      .ProjectListingText{
+        /* height: 100%; */
+        font-size: calc(var(--res-munit)*1.5);
+        padding: var(--res-munit);
+      }
+      .AboutListingText{
+        height: 100%;
+      }
+      .GalleryListing{
+        font-size: calc(var(--res-munit)*2);
+        flex-direction: column-reverse;
+        height: auto;
+        padding: var(--res-munit);
+      }
+      .GalleryLink:nth-child(even) > .GalleryListing{
+        flex-direction: column-reverse;
+      }
+      .ListTitle{
+        text-align: center;
+      }
+      .ListImg{
+        border-radius: 0%;
+        width: 100%;
+        height: auto;        
+      }
+      .ContentTitle{
+        font-size: calc(var(--res-munit)*2);
+      }
+      .HeroImg{
+        width: 90%;
+        height: auto;
+        position: relative;
+        left: 5%;
+      }
+      .HeroVid{
+        width: 90%;
+        height: auto;
+      }
+      .ProjectListingWrapper{
+        height: fit-content;
+      }
+      .ProjectListingLink{
+        margin: var(--res-munit);
+        padding: 0;
+      }
+      .ProjectListingHeading{
+        width: 100%;
+      }
+      .ProjectListingBody{
+        width: 100%;
+      }
+      #modal-content-wrapper{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0%;
+        bottom: 0%;
+      }
+      .AOCText{
+        height: auto;
+        padding: 0%;
+      }
+      .DesktopMenuButton{
+        font-size: calc(var(--res-munit)*2);
+        padding: var(--res-munit);
+      }
+}

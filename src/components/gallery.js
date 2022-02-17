@@ -5,6 +5,7 @@ import {
   Link
 } from "react-router-dom";
 
+import { DitheredGradientBox } from './ditheredGradient';
 import { ProjectEntry } from './projectEntry';
 
 export class Gallery extends Component {
@@ -12,14 +13,20 @@ export class Gallery extends Component {
     return (
       <Routes>
         <Route path={`/:entry`} element={
-          <ProjectEntry />
+          <ProjectEntry
+            mobile={this.props.mobile} />
         } />
         <Route path="/" element={
-          <div className="ContentWrapper">
-            <div className="ContentTitle">
-              {this.props.title}
-            </div>
-            <GalleryListings list={this.props.list} />                     
+          <div className="ContentWrapper PinkBorder">
+            {!this.props.mobile &&
+              <div className="ContentTitle ButtonStyle">
+                {this.props.title}
+                <DitheredGradientBox />
+              </div>
+            }            
+            <GalleryListings
+              mobile={this.props.mobile}
+              list={this.props.list} />                     
           </div>          
         } />
       </Routes>
@@ -33,13 +40,16 @@ function GalleryListings(props){
   const listEntries = props.list.map((project) =>
     <Link to={project.id} key={project.id} className="GalleryLink">
       <div className='GalleryListing PinkBorder' id={project.id}>
-        <img className='ListImg' src={project.listgif} alt={project.listgifalt} />
+        {props.mobile 
+          ?<img className='ListImg' src={project.listhold} alt={project.listgifalt} />
+          :<img className='ListImg' src={project.listgif} alt={project.listgifalt} />
+        }        
         <span className='ListTitle'> {project.title} </span>
       </div>
     </Link>
   );
   return (
-    <div className="ListingWrapper">
+    <div className="ListingWrapper"> 
       {listEntries}
     </div>    
   )
