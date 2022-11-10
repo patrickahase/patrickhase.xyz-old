@@ -34,10 +34,10 @@ export class App extends Component {
           {!this.state.mobile
            ?<Route path="/" element={
               <div id="desktop-wrapper">
-                {this.state.modalIsOpen &&
+                {/* {this.state.modalIsOpen &&
                   <AOCModal
                     closeModal={this.closeModal.bind(this)} />
-                }
+                } */}
                 <DesktopMenu />
                 <div className="ContentWindow">
                   <Outlet />
@@ -106,10 +106,16 @@ export class App extends Component {
     if (this.state.mobile){
       //MOBILE
       /* console.log(window.location.href) */
+      this.updateCustomVH();
+      window.addEventListener('resize', this.updateCustomVH());
     } else {
       //DESKTOP
       window.addEventListener("keydown", (e) => this.onKeyDown(e));
     }
+  }
+  updateCustomVH(){
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
   onKeyDown(e) {
     switch(e.keyCode){

@@ -1,5 +1,77 @@
 // NEWEST TO TOP
 export const projectsList = [
+  /* {
+    "id": "time-absorbs-feelings",
+    "type": "i",
+    "title": <><i>time absorbs the feelings it produces</i></>,
+    "listgif": require('../assets/list-gifs/time-abosrbs-feelings-gif.gif'),
+    "listhold": require('../assets/list-hold/time-absorbs-feelings-hold.png'),
+    "listgifalt": 'Gif of time absorbs the feelings it produces website',
+    "role": <>Co-Creator and Technical Direction</>,
+    "heromedia": <a id='heroimglink' href="https://room2.fm/" target="_blank" rel="noopener noreferrer">
+                   <img className='HeroImg' href="https://room2.fm/" src={require("../assets/list-gifs/room2-ls-gif.gif")} alt="Gif of room2 website" />
+                 </a>,
+    "extlink": "https://room2.fm/",    
+    "context": <>Website created for Nikki Lam</>,
+    "bodytext": <>room2.fm Lockdown Season 2021 presented a series of live audio/visual/textural performances 
+      through the web architecture designed initially for&nbsp;  
+      <a className="SelectLink" href={"/web-installs/room2-eco"}>
+        Darebin Arts Exhibiting Culture Online 2021
+      </a>
+      <br /> <br />
+      room2 hosted a series of live editions across during lockdown in August, September 
+      &amp; October 2021. We invited a range of guests to contribute sounds, procedural 
+      visuals and text prompts to a revised version of the&nbsp;
+      <a className="SelectLink" href={"/interactive/room2-eco"}>
+        interface
+      </a>.
+      <br /> <br />
+      20.8.2021
+      <br />
+      <a className="SelectLink" href={"https://soundcloud.com/anuraag69"} target="_blank" rel="noopener noreferrer">Anuraag</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/fiafiell"} target="_blank" rel="noopener noreferrer">Fia Fiell</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/natalia00110"} target="_blank" rel="noopener noreferrer">Natalia</a>&nbsp;
+      <br /> <br />
+      24.9.2021
+      <br />
+      <a className="SelectLink" href={"https://soundcloud.com/c-frim"} target="_blank" rel="noopener noreferrer">C.FRIM</a> and&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/miraonthebeat"} target="_blank" rel="noopener noreferrer">Mirasia</a>,&nbsp;
+      <a className="SelectLink" href={"https://becfary.com/"} target="_blank" rel="noopener noreferrer">Local Time</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/salllvage"} target="_blank" rel="noopener noreferrer">salllvage</a>&nbsp;
+      <br /> <br />
+      01.10.2021
+      <br />
+      <a className="SelectLink" href={"https://soundcloud.com/cloudyku"} target="_blank" rel="noopener noreferrer">Cloudy Ku</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/iv-dripp"} target="_blank" rel="noopener noreferrer">Ivy</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/femalewizard"} target="_blank" rel="noopener noreferrer">Female Wizard</a>,&nbsp;
+      <a className="SelectLink" href={"https://marcusianmckenzie.com/"} target="_blank" rel="noopener noreferrer">Marcus Ian McKenzie</a>&nbsp;
+      <br /> <br />
+      08.10.2021
+      <br />
+      <a className="SelectLink" href={"https://soundcloud.com/alexandraspence"} target="_blank" rel="noopener noreferrer">Alexandra Spence</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/rhunterrrr"} target="_blank" rel="noopener noreferrer">r hunter</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/rrebeiro"} target="_blank" rel="noopener noreferrer">R. Rebeiro</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/siri-sirasith"} target="_blank" rel="noopener noreferrer">siri</a>&nbsp;
+      <br /> <br />
+      15.10.2021
+      <br />
+      <a className="SelectLink" href={"https://soundcloud.com/e-fishpool"} target="_blank" rel="noopener noreferrer">E Fishpool</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/lowflung"} target="_blank" rel="noopener noreferrer">Low Flung</a>,&nbsp;
+      <a className="SelectLink" href={"https://melaniehuang.com/"} target="_blank" rel="noopener noreferrer">Mel Huang</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/mgmldrm"} target="_blank" rel="noopener noreferrer">miscmeg</a>&nbsp;
+      <br /> <br />
+      21.10.2021
+      <br />
+      <a className="SelectLink" href={"https://emilefrankel.xyz/"} target="_blank" rel="noopener noreferrer">Emile Frankel</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/hani-r"} target="_blank" rel="noopener noreferrer">Hani Hanbali</a>,&nbsp;
+      <a className="SelectLink" href={"https://soundcloud.com/izabel_caligiore"} target="_blank" rel="noopener noreferrer">Izabel</a>,&nbsp;
+      <a className="SelectLink" href={"http://www.hannahwu.com.au/"} target="_blank" rel="noopener noreferrer">Hannah Wu</a> and&nbsp;
+      Panda Wong,&nbsp;
+      <a className="SelectLink" href={"https://mochamas.itch.io/"} target="_blank" rel="noopener noreferrer">Mohamed Chamas</a>&nbsp;
+      <br /> 
+      </>,
+    "tech": <>Javascript, React, WebGL</>
+  } */,
   {
     "id": "room2-ls-21",
     "type": "i",
