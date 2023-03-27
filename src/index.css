@@ -1,0 +1,15 @@
+@font-face{
+  font-family: 'Work Sans';
+  src: url('./content/font/WorkSans-Regular.ttf') format("truetype");
+}
+
+:root{
+  --comp-col-01:#3e1815;
+  --comp-col-02: #1e90ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Work Sans';
+}
