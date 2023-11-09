@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e538fdfc.css",
+    "main.js": "/static/js/main.4c12acc4.js",
+    "static/media/Calibration-bigif.gif": "/static/media/Calibration-bigif.ca134c7ae5f51e3bb5c6.gif",
+    "static/media/polt-gif.gif": "/static/media/polt-gif.2fd47a2a876d550859d1.gif",
+    "static/media/room2-ls-gif.gif": "/static/media/room2-ls-gif.20c8b43305604559d21e.gif",
+    "static/media/pull-me-under-gif.gif": "/static/media/pull-me-under-gif.aca61735db3bdf00cce4.gif",
+    "static/media/trish-gif.gif": "/static/media/trish-gif.3145527aea9158085ca9.gif",
+    "static/media/naa-gif.gif": "/static/media/naa-gif.e7b962393a9b37b2187a.gif",
+    "static/media/yubaba-gif.gif": "/static/media/yubaba-gif.26ae13932889fd8c46fc.gif",
+    "static/media/room2-gif.gif": "/static/media/room2-gif.8b2b14e954e30a38db4a.gif",
+    "static/media/next-exit-gif.gif": "/static/media/next-exit-gif.0ec952563b6b2e31ebe1.gif",
+    "static/media/calibration.gif": "/static/media/calibration.ae87762f4cf12e93de8e.gif",
+    "static/media/obj-ani-gif.gif": "/static/media/obj-ani-gif.fbf6c0f5fb0ade482763.gif",
+    "static/media/sunkland-xyz-gif.gif": "/static/media/sunkland-xyz-gif.bcbe3eec78ed691f9588.gif",
+    "static/media/tnw-gif.gif": "/static/media/tnw-gif.745cd62026363db6866c.gif",
+    "static/media/pressed-pic.png": "/static/media/pressed-pic.1e8cb62fd5586297bb9b.png",
+    "static/media/room2-ls-hold.png": "/static/media/room2-ls-hold.3ff0dc6181f4f6da2dd8.png",
+    "static/media/Recursive_VF_1.077--subset-GF_latin_basic.woff2": "/static/media/Recursive_VF_1.077--subset-GF_latin_basic.80800a5e3ab53a11ecd4.woff2",
+    "static/media/calibration-hold.png": "/static/media/calibration-hold.cdd9d3d93aebed652cfc.png",
+    "static/media/WorkSans-Regular.ttf": "/static/media/WorkSans-Regular.e6f572cef6e7a7d236de.ttf",
+    "static/media/polt-hold.png": "/static/media/polt-hold.5b1a6ecd2403e458c0d7.png",
+    "static/media/sunkland-xyz-hold.png": "/static/media/sunkland-xyz-hold.82dbc62fbace7f50c1a9.png",
+    "static/media/obj-ani-hold.png": "/static/media/obj-ani-hold.f9e75cc2243f995890d3.png",
+    "static/media/pull-me-under-hold.png": "/static/media/pull-me-under-hold.75924aff73217873ae9a.png",
+    "static/media/naa-hold.png": "/static/media/naa-hold.2fcd751952d197d71335.png",
+    "static/media/cpu.gif": "/static/media/cpu.956b309538f4cee2cf25.gif",
+    "static/media/TNW_gif_hold.png": "/static/media/TNW_gif_hold.7487b4678d236fdba924.png",
+    "static/media/rynextexit-hold.png": "/static/media/rynextexit-hold.dd05083e6fe5cd395da4.png",
+    "static/media/yubaba-hold.png": "/static/media/yubaba-hold.8b03c374a43f826172e1.png",
+    "static/media/infinitefluke.png": "/static/media/infinitefluke.860e3b43a9b986dfedd7.png",
+    "static/media/trish-hold.png": "/static/media/trish-hold.e77e98e56ce766a7af60.png",
+    "static/media/room2-hold.png": "/static/media/room2-hold.8b1854cdde8c9751a61c.png",
+    "index.html": "/index.html",
+    "main.e538fdfc.css.map": "/static/css/main.e538fdfc.css.map",
+    "main.4c12acc4.js.map": "/static/js/main.4c12acc4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e538fdfc.css",
+    "static/js/main.4c12acc4.js"
+  ]
+}
